@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <body>
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-latest.js"
+    ></script>
+
+    <div class="scroll-moveBox flex flex-br-c">
+      <ul>
+        <li><a href="#div1" id="scroll_move">div1로 이동</a></li>
+        <li><a href="#div2" id="scroll_move">div2로 이동</a></li>
+        <li><a href="#div3" id="scroll_move">div3로 이동</a></li>
+        <li><a href="#div4" id="scroll_move">div4로 이동</a></li>
+      </ul>
+    </div>
+
+    <div id="div1" style="background-color: aqua; width: 100%; height: 1000px">
+      div1
+    </div>
+
+    <div
+      id="div2"
+      style="background-color: rgb(82, 175, 73); width: 100%; height: 1000px"
+    >
+      div2
+    </div>
+
+    <div id="div3" style="background-color: rgb(8, 49, 77); width: 100%; height: 1000px">div3</div>
+
+    <div id="div4" style="background-color: rgb(226, 10, 39); width: 100%; height: 1000px">div4</div>
+  </body>
+  <script>
+    $(document).ready(function ($) {
+      $(".scroll_move").click(function (event) {
+        event.preventDefault();
+
+        $("html,body").animate(
+          {
+            scrollTop: $(this.hash).offset().top,
+          },
+          1500
+        );
+      });
+    });
+  </script>
+</html>
